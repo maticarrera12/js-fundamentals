@@ -1,0 +1,1 @@
+console.log(`${w1} es un isograma? ${w1.length === new Set(w1).size}`);

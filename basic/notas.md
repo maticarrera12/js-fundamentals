@@ -1,0 +1,1 @@
+## aprender mas sobre manejo de errores, podemos extender a javascript.info
