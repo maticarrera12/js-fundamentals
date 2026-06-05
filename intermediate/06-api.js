@@ -1,3 +1,5 @@
+
+
 // API -> Application Programming Interface 
 
 // Las APIs son un conjunto de reglas y protocolos que permiten que diferentes aplicaciones se comuniquen entre sí.
@@ -34,23 +36,23 @@
 // Vamos a usar la API de JSONPlaceholder, que es una API de prueba que proporciona datos ficticios para realizar pruebas y prototipos. Nos permite hacer solicitudes GET, POST, PUT y DELETE a diferentes recursos como posts, comments, albums, photos, etc.
 
 fetch('https://jsonplaceholder.typicode.com/posts/1')
-.then(res => {
-    return res.json(); // convierte la respuesta a formato JSON
-})
-.then(data => {
-    console.log(data);
-})
-.catch(err => {
-    console.error('Error:', err);
-})
-.finally(() => {
-    console.log('Solicitud finalizada');
-});
+    .then(res => {
+        return res.json(); // convierte la respuesta a formato JSON
+    })
+    .then(data => {
+        console.log(data);
+    })
+    .catch(err => {
+        console.error('Error:', err);
+    })
+    .finally(() => {
+        console.log('Solicitud finalizada');
+    });
 
 
 // También podemos usar async/await para manejar las promesas de manera más legible:
 
-async function getPost(){
+async function getPost() {
 
     try {
         const res = await fetch('https://jsonplaceholder.typicode.com/posts');
@@ -66,7 +68,7 @@ getPost();
 // Solicitud POST
 
 
-async function createPost(){
+async function createPost() {
 
     try {
 
@@ -75,7 +77,7 @@ async function createPost(){
             body: 'bar',
             userId: 1
         };
-        const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
+        const res = await fetch('https://jsonplaceholder.typicode.com/posts/1', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -90,3 +92,102 @@ async function createPost(){
 }
 
 createPost();
+
+// Manejo de errores
+
+fetch('https://jsonplaceholder.typicode.com/posts/1000')
+    .then(res => {
+        if (!res.ok)
+            throw new Error(`Error ${res.status}: ${res.statusText}`);
+        else {
+            return res.json();
+        }
+    })
+    .catch(err => {
+        console.error('Error:', err);
+    })
+    .finally(() => {
+        console.log('Solicitud finalizada');
+    })
+
+// Metodos HTTP adicionales
+
+// - Patch: Actualiza parcialmente un recurso existente.
+
+// - Options: Obtiene información sobre los métodos HTTP soportados por un recurso.
+
+async function partialPostUpdate() {
+
+    try {
+
+
+        const res = await fetch('https://jsonplaceholder.typicode.com/posts/1', {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ title: 'Este es el nievo titulo' })
+        });
+        const data = await res.json();
+        console.log(data);
+    } catch (err) {
+        console.error('Error:', err);
+    }
+}
+
+partialPostUpdate();
+
+
+// - Options: Obtiene información sobre los métodos HTTP soportados por un recurso.
+
+
+// Autenticacion en APIs
+
+// Autenticacion mediante API key, es una forma de autenticar a un usuario mediante una clave secreta que se pasa en la cabecera de la solicitud.
+
+
+
+async function getWeather(city) {
+    const API_KEY = "972346d35154ac52a3f72589d91bf5c7 ";
+    const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${city},uk&APPID=${API_KEY}`;
+    console.log("Inicio de la solicitud");
+    
+    try {
+        const res = await fetch(API_URL);
+        const data = await res.json();
+        
+        if(!res.ok){
+            throw new Error(`Error ${res.status}: ${res.statusText}`);
+        }
+        else {
+            console.log(data);
+        }
+    } catch (err) {
+        console.error("Error:", err);
+    }
+    finally {
+        console.log("Solicitud finalizada");
+    }
+}
+
+getWeather("Madrid");
+
+// Otros metodos de autenticacion
+
+// Bearer token, es una forma de autenticar a un usuario mediante un token que se pasa en la cabecera de la solicitud.
+
+
+// JWT (JSON Web Token), es una forma de autenticar a un usuario mediante un token que se pasa en la cabecera de la solicitud.
+
+
+// Versionado de APIs
+
+// Las APIs se pueden versionar para que los clientes puedan usar diferentes versiones de la API.
+
+// Version 1: https://api.example.com/v1/
+// Version 2: https://api.example.com/v2/
+
+
+// Otra API de ejemplo
+
+// Pokeapi -> https://pokeapi.co/api/v2/
