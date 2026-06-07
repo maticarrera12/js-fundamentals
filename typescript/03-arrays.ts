@@ -122,17 +122,17 @@ enum Priority {
 // Limitación: no podés iterarlo ni usarlo en contextos donde
 // se necesite el objeto (como @types de librerías externas).
 
-const enum Direction {
+const enum DirectionMode {
     Up    = 'UP',
     Down  = 'DOWN',
     Left  = 'LEFT',
     Right = 'RIGHT'
 }
 
-function move(dir: Direction): void {
+function movementDirection(dir: DirectionMode): void {
     console.log(dir)  // en el JS compilado: console.log('UP')
 }
-move(Direction.Up)
+movementDirection(DirectionMode.Up)
 
 // Cuándo usar cuál:
 // enum regular → cuando el código se consume desde fuera del módulo
@@ -160,3 +160,5 @@ move(Direction.Up)
 //    Escribí una función que reciba Employee[] y devuelva los empleados agrupados
 //    por rol: Record<JobRole, Employee[]>.
 // Tu código acá:
+
+export {}

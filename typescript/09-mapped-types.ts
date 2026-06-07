@@ -147,3 +147,5 @@ interface Product {
 //    también se lo hace Readonly.
 //    Tip: T[K] extends object ? DeepReadonly<T[K]> : T[K]
 // Tu código acá:
+
+export {}

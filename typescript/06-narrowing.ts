@@ -41,7 +41,7 @@ function printName(name: string | null) {
 type Fish = { swim: () => void }
 type Bird = { fly: () => void }
 
-function move(animal: Fish | Bird) {
+function moveAnimal(animal: Fish | Bird) {
     if ('swim' in animal) {
         animal.swim() // TS sabe que es Fish
     } else {
@@ -154,3 +154,5 @@ function handleUser(user: AppUser) {
 //    true solo si el valor es un array donde TODOS los elementos son string.
 //    Tip: Array.isArray + every.
 // Tu código acá:
+
+export {}

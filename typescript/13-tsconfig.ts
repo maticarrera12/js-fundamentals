@@ -168,3 +168,5 @@
 // Después ejecutá: npx tsc --noEmit
 // y fijate qué errores encuentra en los archivos que ya escribiste.
 // Son todos bugs reales — intentá corregir al menos 2.
+
+export {}

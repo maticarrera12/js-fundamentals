@@ -169,3 +169,5 @@ type PartialDog = Partial<Dog>
 //    type AppEvents = { login: { userId: number }; logout: {} }
 //    const emitter: EventEmitter<AppEvents> = ...
 // Tu código acá:
+
+export {}

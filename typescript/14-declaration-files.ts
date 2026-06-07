@@ -15,7 +15,7 @@
 // ============================================================
 
 // Cuando hacés:
-import fs from 'node:fs'
+// import fs from 'node:fs'
 
 // TS busca el .d.ts de 'fs' en @types/node.
 // Ese archivo describe exactamente qué hace fs.readFileSync,
@@ -64,10 +64,10 @@ declare const __DEV__: boolean
 // Sin el declare, TS no sabe que existen.
 
 // Módulos sin tipos (cuando no hay @types):
-declare module 'some-untyped-library' {
-    export function doSomething(value: string): number
-    export const config: Record<string, unknown>
-}
+// declare module 'some-untyped-library' {
+//     export function doSomething(value: string): number
+//     export const config: Record<string, unknown>
+// }
 
 
 // ============================================================
@@ -140,3 +140,5 @@ declare global {
 //    'node:fs', etc. Encontrá en qué .d.ts está definido
 //    y copiá acá la firma de al menos 2 funciones que uses seguido.
 // Tu hallazgo acá:
+
+export {}

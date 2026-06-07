@@ -74,7 +74,7 @@ function toUserPreview(user: User): UserPreview {
 type CreateUserDTO = Omit<User, 'id'>
 // { name: string; email: string; age: number }
 
-function createUser(data: CreateUserDTO): User {
+function createUserDTO(data: CreateUserDTO): User {
     return { ...data, id: Math.floor(Math.random() * 10000) }
 }
 
@@ -183,3 +183,5 @@ function fetchProduct() {
     }
 }
 // Tu código acá:
+
+export {}

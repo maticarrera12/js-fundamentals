@@ -140,3 +140,5 @@ const str = parse('hello', 'string')   // str es string
 //    Awaited<number> → number
 //    Tip: usá infer y recursión en el conditional type.
 // Tu código acá:
+
+export {}

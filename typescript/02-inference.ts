@@ -199,3 +199,5 @@ function createRecord(name: string): Audited {
 //    Escribí "processEvent(event: AppEvent): string" con exhaustiveness checking.
 //    Verificá que si agregás un nuevo evento sin manejar el case, TS da error.
 // Tu código acá:
+
+export {}

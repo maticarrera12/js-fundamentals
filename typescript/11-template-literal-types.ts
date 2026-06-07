@@ -147,3 +147,5 @@ type ConfigAPI = Getters<Config> & Setters<Config>
 //    → 'user' | 'user.name' | 'user.address' | 'user.address.city'
 //    Tip: recursivo. Combiná template literals + conditional + mapped + keyof.
 // Tu código acá:
+
+export {}

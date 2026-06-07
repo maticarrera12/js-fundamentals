@@ -11,7 +11,7 @@
 // Tres tipos principales + dos menos comunes.
 // TS los infiere automáticamente — solo anotás cuando no puede.
 
-let name: string  = 'Matias'
+let name: string  = 'Matías'
 let age: number   = 25
 let active: boolean = true
 
@@ -80,7 +80,7 @@ function formatId(id: string | number): string {
     return String(id)            // TS sabe que es number acá
 }
 
-function processInput(input: string | string[]): string {
+function processInputOne(input: string | string[]): string {
     if (Array.isArray(input)) return input.join(', ')
     return input
 }
@@ -143,3 +143,5 @@ function getUpperCase(text: string | null): string {
 //    timeout (number, opcional), headers (Record<string, string>, opcional).
 //    Escribí una función "logRequest" que reciba ApiConfig y loguee la petición.
 // Tu código acá:
+
+export {}

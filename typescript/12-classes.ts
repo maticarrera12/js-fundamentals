@@ -234,3 +234,5 @@ const found = userRepo.findById(1) // found es User | undefined
 //    - El constructor puede recibir elementos iniciales opcionales
 //    Asegurate de que pop/peek retornen T | undefined correctamente.
 // Tu código acá:
+
+export {}

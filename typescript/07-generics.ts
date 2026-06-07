@@ -89,7 +89,7 @@ function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
 
 const user: User = { id: 1, name: 'Matias' }
 const name = getProperty(user, 'name')  // name es string
-const id = getProperty(user, 'id')      // id es number
+const idUser = getProperty(user, 'id')      // id es number
 // getProperty(user, 'email')  ← error! 'email' no existe en User
 
 
@@ -129,7 +129,7 @@ class Stack<T> {
 const numberStack = new Stack<number>()
 numberStack.push(1)
 numberStack.push(2)
-const top = numberStack.peek() // top es number
+const topNumber = numberStack.peek() // topNumber es number
 
 
 // ============================================================
@@ -165,3 +165,5 @@ const top = numberStack.peek() // top es number
 //    función en orden al valor.
 //    Ejemplo: pipe(5, [x => x * 2, x => x + 1]) → 11
 // Tu código acá:
+
+export {}

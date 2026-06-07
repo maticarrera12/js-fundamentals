@@ -18,6 +18,18 @@ Si algo de esto falla, TypeScript lo va a amplificar — no lo va a resolver.
 
 ---
 
+## Cómo usar este roadmap
+
+Dos fases en paralelo con los archivos:
+
+**Fase 1 — TypeScript Handbook (3-4 días)**  
+Leé las secciones clave: *More on Functions*, *Object Types*, *Generics*, toda la sección *Type Manipulation*, *Utility Types*.
+
+**Fase 2 — Aplicación en código real (3-4 días)**  
+Migrá un proyecto propio a TS estricto. Acá aprendés más que con cualquier documentación.
+
+---
+
 ## Etapa 0 — Fundamentos del type system (01-05)
 
 Los conceptos base que TS agrega sobre JS. Cada archivo tiene foco propio — sin solapamiento.
@@ -29,6 +41,13 @@ Los conceptos base que TS agrega sobre JS. Cada archivo tiene foco propio — si
 | `03-arrays.ts` | Arrays, **readonly arrays**, **as const**, tuplas (con labels y rest), matrices, enums, **const enum** |
 | `04-type-assertions.mts` | as, cuándo usarlo correctamente, **as const** en objetos, **satisfies**, fetch tipado completo |
 | `05-interfaces.ts` | Interfaces, métodos, extends (simple y múltiple), **declaration merging**, **index signatures**, interface vs type alias |
+
+**Lectura complementaria** (TypeScript Handbook):
+- "The Basics" → entender qué problema resuelve TS, type checking en build time vs runtime
+- "Everyday Types" → string, number, boolean, arrays, tuples, any, unknown, void, tipos literales
+- "Object Types" → interfaces vs types, propiedades opcionales, readonly, index signatures, extending, intersection
+
+*"Narrowing" está en el Handbook como capítulo propio — lo leés cuando llegues al archivo 06.*
 
 ---
 
@@ -44,6 +63,12 @@ El núcleo. Sin esto TypeScript es solo "JavaScript con anotaciones".
 
 **Señal de que podés avanzar**: podés escribir una función genérica con constraint y usar `Partial`/`Omit` sin mirar la doc.
 
+**Lectura complementaria** (TypeScript Handbook):
+- "Narrowing" → mapea directo a `06`; leelo antes o en paralelo con el archivo
+- "More on Functions" → call signatures, generic functions, overloads — complementa `07`
+- **"Generics"** → el capítulo más importante del Handbook; leelo antes de `07`
+- "Utility Types" → leelo después de `08`, para ver los que no cubre el archivo
+
 ---
 
 ## Etapa 2 — Tipos avanzados (09-11)
@@ -58,6 +83,17 @@ Esto es lo que te da superpoderes para modelar dominios complejos.
 
 **Señal de que podés avanzar**: podés implementar `Pick` o `Exclude` vos mismo sin mirar la solución.
 
+**Lectura complementaria** (TypeScript Handbook → sección *Type Manipulation*):
+
+Esta sección vale la pena darle tiempo — el Handbook sugiere 3-4 días solo para este bloque.
+
+- "Keyof Type Operator" → antes de `09`
+- "Typeof Type Operator" → antes de `09`
+- "Indexed Access Types" → antes de `09`
+- **"Mapped Types"** → mapea directo a `09`
+- **"Conditional Types"** → incluye distributive conditional types e `infer`; mapea a `10`
+- **"Template Literal Types"** → mapea a `11`
+
 ---
 
 ## Etapa 3 — Estructuras y tooling (12-14)
@@ -71,6 +107,16 @@ Cómo TypeScript se integra con el mundo real.
 | `14-declaration-files.ts` | Al final porque para escribirlos bien necesitás entender todo lo anterior: generics, utility types, ambient declarations. |
 
 **Señal de que terminaste esta etapa**: podés arrancar un proyecto TypeScript desde cero con tsconfig correcto y saber por qué cada opción está ahí.
+
+**Lectura complementaria** (TypeScript Handbook):
+- "Classes" → pasada rápida si ya entendés clases en JS — foco en modificadores de acceso y abstract classes
+- "Modules" → pasada rápida si ya entendés ESM
+
+**Lo que no leer ahora:**
+- *Reference* — es referencia, no tutorial; consultala cuando necesitás algo puntual
+- *Declaration Files* — solo si vas a publicar librerías; no es el caso ahora
+- *Project References* — para monorepos grandes; no aplica
+- *JSX* — lo tocás cuando llegues a React
 
 ---
 
