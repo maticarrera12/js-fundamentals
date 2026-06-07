@@ -1,1 +1,5 @@
 .atl
+node_modules
+dist
+.env
+**/roadmap-exercises/
