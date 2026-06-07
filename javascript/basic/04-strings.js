@@ -1,0 +1,114 @@
+// ============================================================
+// 04 - STRINGS
+// ============================================================
+// Los strings son inmutables — los métodos no modifican el original,
+// devuelven un nuevo string. Conocer los métodos más comunes
+// te evita tener que reinventar manipulaciones básicas de texto.
+// ============================================================
+
+
+// --- Creación ---
+// Tres formas: '', "" (equivalentes) y template literals (``)
+// Los template literals soportan interpolación y multilínea.
+
+const name    = 'Matias'
+const message = `Hola ${name.toUpperCase()}, bienvenido!`
+const multiline = `Línea 1
+Línea 2
+Línea 3`
+
+
+// --- Acceso y longitud ---
+
+const greeting = 'Hello, Matias!'
+
+console.log(greeting.length)   // 14
+console.log(greeting[0])       // 'H'
+console.log(greeting[7])       // 'M'
+console.log(greeting.at(-1))   // '!' — at() acepta índices negativos (ES2022), empieza desde el final
+console.log(greeting.at(-2))   // 's'
+
+
+// --- Búsqueda ---
+
+console.log(greeting.includes('Matias'))     // true
+console.log(greeting.indexOf('Matias'))      // 7  — índice de la primera ocurrencia (-1 si no existe)
+console.log(greeting.startsWith('Hello'))    // true
+console.log(greeting.endsWith('!'))          // true
+
+
+// --- Extracción ---
+// slice(inicio, fin) — el fin no se incluye. Acepta negativos.
+
+console.log(greeting.slice(7, 13))   // 'Matias'
+console.log(greeting.slice(7))       // 'Matias!' — sin fin: hasta el final
+console.log(greeting.slice(-7))      // 'Matias!' — negativo: desde el final
+
+
+// --- Transformación ---
+// Todos devuelven un NUEVO string, no modifican el original.
+
+console.log(greeting.toUpperCase())    // 'HELLO, MATIAS!'
+console.log(greeting.toLowerCase())    // 'hello, matias!'
+console.log('  espacios  '.trim())     // 'espacios'
+console.log('  espacios  '.trimStart()) // 'espacios  '
+console.log('  espacios  '.trimEnd())   // '  espacios'
+console.log(greeting.replace('Matias', 'Mundo'))  // 'Hello, Mundo!'
+console.log('aa-bb-cc'.replaceAll('-', '_'))       // 'aa_bb_cc'
+
+
+// --- Split y join ---
+// split: string → array.  join: array → string.  Son operaciones inversas.
+
+const csv = 'Ana,Luis,Mara,Carlos'
+const names = csv.split(',')   // ['Ana', 'Luis', 'Mara', 'Carlos']
+console.log(names.join(' | ')) // 'Ana | Luis | Mara | Carlos'
+
+const path = '/users/matias/documents'
+const parts = path.split('/')  // ['', 'users', 'matias', 'documents']
+
+
+// --- Padding y repeat ---
+
+console.log('5'.padStart(3, '0'))    // '005'
+console.log('5'.padEnd(3, '0'))      // '500'
+console.log('ha'.repeat(3))          // 'hahaha'
+
+
+// --- Template literals avanzados ---
+// Podés usar cualquier expresión dentro de ${}
+
+const price = 1500
+const tax   = 0.21
+console.log(`Precio: $${price} + IVA = $${(price * (1 + tax)).toFixed(2)}`)
+
+// Tagged templates: una función que procesa el template literal
+function highlight(strings, ...values) {
+    return strings.reduce((acc, str, i) =>
+        acc + str + (values[i] !== undefined ? `[${values[i]}]` : ''), '')
+}
+console.log(highlight`Hola ${name}, tu puntaje es ${100}`)
+// 'Hola [Matias], tu puntaje es [100]'
+
+
+// ============================================================
+// EJERCICIOS
+// ============================================================
+
+// 1. Escribí una función "slugify(title)" que convierta un título
+//    a formato URL: minúsculas, espacios reemplazados por '-',
+//    sin caracteres especiales.
+//    "Hola Mundo! Esto es JS" → "hola-mundo-esto-es-js"
+// Tu código acá:
+
+
+// 2. Escribí una función "truncate(text, maxLength)" que acorte
+//    un string a maxLength caracteres y agregue "..." al final
+//    si fue truncado. Si el texto ya es más corto, devolvelo sin cambios.
+// Tu código acá:
+
+
+// 3. Dado el string "nombre:Matias,edad:25,ciudad:BsAs",
+//    parsealo sin usar JSON.parse y convertilo en un objeto:
+//    { nombre: 'Matias', edad: '25', ciudad: 'BsAs' }
+// Tu código acá:
