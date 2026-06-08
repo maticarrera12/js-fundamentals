@@ -101,14 +101,3 @@ logRequest({
 
 
 export {}
-
-
-// Object.keys(headers)
-
-// ¿Qué devuelve esto?
-
-// Object.values(headers)
-
-// ¿Y esto?
-
-// Object.entries(headers)
