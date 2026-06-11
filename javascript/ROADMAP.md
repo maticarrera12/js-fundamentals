@@ -19,6 +19,7 @@ Los bloques más básicos del lenguaje.
 | `03-operators.js` | Aritméticos, comparación (== vs ===), truthy/falsy, lógicos, ternario, **?? y ?.**, logical assignment (??=, \|\|=, &&=) |
 | `04-strings.js` | Métodos de string, template literals |
 | `05-conditionals.js` | if/else, switch |
+| `22-numbers-math.js` | Precisión de floats (0.1 + 0.2), parsing (Number vs parseInt), toFixed, Math, random — *numerado 22 porque se agregó después, pero pertenece acá* |
 
 **Señal para avanzar**: podés explicar la diferencia entre `==` y `===`, y entre `??` y `||`.
 
@@ -145,7 +146,8 @@ Con la base sólida, estos archivos profundizan cómo funciona JS en la práctic
 | `intermediate/06-api.js` | fetch, headers, manejo de respuestas | Después de async — aplicación directa |
 | `intermediate/07-regex.js` | Expresiones regulares — buscar, validar, transformar texto | Requiere dominar strings — independiente del resto |
 | `intermediate/08-generators.js` | function*, yield, iteradores infinitos, async generators | Requiere iterables (Etapa 1) y async (05) |
-| `intermediate/dom/07-dom.js` | DOM manipulation, eventos | Requiere todo lo anterior — es la interfaz con el browser |
+| `intermediate/dom/07-dom.js` | DOM manipulation: selectores, atributos, classList, crear/insertar/eliminar nodos | Requiere todo lo anterior — es la interfaz con el browser |
+| `intermediate/dom/08-events.js` | addEventListener, bubbling, **event delegation**, preventDefault, submit, custom events | La otra mitad del DOM. Delegation es la base de cómo React maneja eventos — y del proyecto 2 |
 
 **Señal para avanzar a frameworks**: dominás async/await y Promise.all, podés escribir una función que fetchea datos, maneja errores y devuelve un tipo conocido.
 
@@ -186,6 +188,40 @@ Con la base sólida, estos archivos profundizan cómo funciona JS en la práctic
 
 ---
 
+## Etapa 6 — Nivel pro (advanced/)
+
+Lo que separa "sé JavaScript" de "entiendo cómo funciona JavaScript". Acá viven los temas de entrevista, los bugs difíciles y los huecos que ningún curso básico cubre.
+
+| Archivo | Temas | Por qué acá |
+|---------|-------|-------------|
+| `advanced/01-event-loop.js` | Microtasks vs macrotasks, await por dentro, starvation, partir trabajo pesado | Profundiza lo que `intermediate/05` presentó. EL tema de entrevistas — y la causa de los bugs async más confusos |
+| `advanced/02-async-patterns.js` | AbortController, timeouts, retry con backoff, debounce/throttle, pools de concurrencia | Los patrones que el código de producción usa todos los días. Requiere async (05) dominado |
+| `advanced/03-memory.js` | GC y alcanzabilidad, leaks (caches, listeners, timers), WeakMap/WeakSet, DevTools | Explica POR QUÉ existe el cleanup de useEffect antes de que React te lo imponga |
+| `advanced/04-immutability.js` | Mutación vs copia, toSorted/toReversed/with, updates anidados, Object.freeze | EL prerequisito conceptual de React: detección de cambios por referencia |
+| `advanced/05-dates-intl.js` | Date y sus 5 trampas, Intl.DateTimeFormat/NumberFormat/RelativeTimeFormat, Temporal | El hueco más grande de cualquier curso — y todos los proyectos reales usan fechas y monedas |
+| `advanced/06-platform-apis.js` | URL, URLSearchParams, FormData, localStorage, clipboard, crypto.randomUUID, performance.now | La plataforma que rodea al lenguaje — sin esto no hay proyecto real |
+
+**Señal de que terminaste**: podés predecir el orden de ejecución de código async mezclado (timers + promesas) sin ejecutarlo, y explicar por qué una respuesta de red vieja puede pisar una nueva — y cómo evitarlo.
+
+**Lectura complementaria**:
+- Lydia Hallie: *JavaScript Visualized: Event Loop* (si no lo leíste en la Etapa 5, ahora es obligatorio)
+- javascript.info: "Garbage collection" + "WeakMap and WeakSet" → con `03`
+- MDN: "Memory management" → con `03`
+
+---
+
+## Proyectos integradores
+
+En `projects/README.md` hay 3 proyectos con criterios de aceptación:
+
+1. **Mini store (tu propio Redux)** — después de la Etapa 5 + `advanced/04`
+2. **Buscador con typeahead** — después de `advanced/02`
+3. **Task runner concurrente** — la prueba final, todo `advanced/`
+
+La teoría sin proyecto se evapora en dos semanas. No los saltees.
+
+---
+
 ## Después de esto
 
 | Paso | Qué es |
@@ -195,5 +231,5 @@ Con la base sólida, estos archivos profundizan cómo funciona JS en la práctic
 | **pnpm + tooling** | package.json, Vite, ESLint, Prettier |
 | **Framework** | React, Vue o Svelte — en ese orden de complejidad |
 
-**Regla crítica**: no saltes a un framework hasta terminar la Etapa 5 completa.
+**Regla crítica**: no saltes a un framework hasta terminar la Etapa 6 completa.
 El 90% de los problemas que tienen los devs junior en React son problemas de JavaScript, no de React.

@@ -67,7 +67,7 @@ encodedButton.style.cursor = "pointer";
 console.log(encodedButton);
 
 const encodedInput = document.querySelector("input");
-input.value = "Hello World";
+encodedInput.value = "Hello World";
 console.log(encodedInput);
 
 const encodedForm = document.querySelector("form");
@@ -99,4 +99,5 @@ console.log(encodedButton);
 encodedNewDiv.remove();
 console.log(encodedNewDiv);
 
-// elementos y eventos del dom
+// Los eventos del DOM (addEventListener, bubbling, delegation)
+// tienen archivo propio: 08-events.js

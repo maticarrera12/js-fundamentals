@@ -40,6 +40,34 @@ console.log('síncrono')
 // Orden: 'síncrono' → 'microtask' → 'timeout'
 
 
+// --- Timers: setTimeout y setInterval ---
+// Las dos Web APIs de scheduling — las venís viendo en los ejemplos,
+// acá está su API completa.
+
+// setTimeout: ejecutá UNA vez, después de (al menos) N ms.
+// Devuelve un ID que sirve para cancelarlo.
+const timeoutId = setTimeout(() => console.log('hola con delay'), 1000)
+clearTimeout(timeoutId)   // cancelado — nunca se ejecuta
+
+// setInterval: ejecutá CADA N ms hasta que alguien lo cancele.
+// Si no guardás el ID, no lo podés frenar nunca (leak clásico).
+let ticks = 0
+const intervalId = setInterval(() => {
+    ticks++
+    console.log(`tick ${ticks}`)
+    if (ticks === 3) clearInterval(intervalId)   // siempre tené plan de salida
+}, 1000)
+
+// Argumentos extra: se le pasan al callback (mejor que envolver en arrow)
+setTimeout((name, role) => console.log(name, role), 500, 'Matias', 'admin')
+
+// Dos gotchas:
+// 1. El delay es un MÍNIMO, no una promesa de puntualidad — el callback
+//    espera su turno en la cola (lo profundizás en advanced/01-event-loop).
+// 2. setTimeout(obj.method, 1000) pierde el this — pasá una arrow:
+//    setTimeout(() => obj.method(), 1000)
+
+
 // --- Callbacks ---
 // Una función que se pasa como argumento y se ejecuta cuando
 // una operación asíncrona termina. El origen de todo en JS asíncrono.
