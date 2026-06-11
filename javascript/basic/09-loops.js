@@ -5,6 +5,7 @@
 // depende de lo que iterás: for clásico para índices precisos,
 // for...of para iterables, for...in para claves de objeto,
 // while cuando no sabés cuántas iteraciones necesitás.
+// do...while se ejecuta al menos una vez, luego se evalúa la condición.
 // ============================================================
 
 

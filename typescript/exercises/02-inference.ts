@@ -83,11 +83,10 @@ function processEvent(event: AppEvent): string {
         case "error":
             return event.message
             break
-        default: {
+        default: 
             // const _exhaustive: never = event
             // return _exhaustive
             return "Error"
-        }
     }
 }
 
