@@ -120,11 +120,44 @@ Cómo TypeScript se integra con el mundo real.
 
 ---
 
+## Etapa 4 — Nivel pro (15-19)
+
+Lo que separa "sé TypeScript" de "diseño con TypeScript". Acá no hay casi sintaxis nueva — hay modelo mental, criterio y patrones de código real.
+
+| Archivo | Por qué acá |
+|---------|-------------|
+| `15-functions-advanced.ts` | Overloads, `this` tipado, construct signatures y las 3 reglas para escribir buenas funciones genéricas. Incluye features modernas: `const` type params y `NoInfer`. |
+| `16-structural-typing.ts` | El archivo más importante de la etapa: CÓMO PIENSA el compilador. Tipado estructural, asignabilidad como conjuntos, excess property checking, varianza. Después de esto, los errores "raros" de TS dejan de ser raros. |
+| `17-advanced-patterns.ts` | Branded types, Result, assertNever, registries con satisfies, builders. Los patrones que vas a ver en cualquier codebase seria — y que resuelven los problemas que 16 dejó expuestos. |
+| `18-modules.ts` | ESM vs CJS, `import type`, extensiones, module augmentation. La mitad de los problemas de proyectos TS reales son de módulos, no de tipos. |
+| `19-runtime-validation.ts` | El cierre del path: los tipos SE BORRAN en runtime. Zod, parse don't validate, fronteras. Conecta con el `as` "peligroso" que quedó pendiente en el archivo 04. |
+
+**Señal de que terminaste**: en un code review podés explicar por qué un `as` está mal, proponer el branded type o el schema que lo reemplaza, y justificar la config de módulos del tsconfig.
+
+**Lectura complementaria:**
+- Handbook: "More on Functions" (overloads, this) → con `15`
+- Handbook: "Type Compatibility" (en Reference) → con `16`
+- [Zod docs](https://zod.dev) → con `19`, solo el quickstart
+
+---
+
+## Proyectos integradores
+
+En `projects/README.md` hay 3 proyectos con criterios de aceptación:
+
+1. **Event Bus tipado** — después de la Etapa 2
+2. **Cliente de API validado** — después de la Etapa 4
+3. **Migración real a TS estricto** — la prueba final
+
+La teoría sin proyecto se evapora en dos semanas. No los saltees.
+
+---
+
 ## Después de esto
 
-Con las 3 etapas completadas, el camino natural es:
+Con las 4 etapas y los proyectos completados, el camino natural es:
 
-1. **TypeScript + Node.js** — Prisma, Fastify/Express tipado, Zod para validación
+1. **TypeScript + Node.js** — Prisma, Fastify/Express tipado, Zod en las fronteras
 2. **TypeScript + React** — Props tipadas, hooks con generics, context tipado
 3. **Patrones de arquitectura en TS** — Hexagonal, repositorios, servicios
 4. **Librerías que valen la pena leer por dentro** — Zod, tRPC, Hono
