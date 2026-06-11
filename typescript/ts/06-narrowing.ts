@@ -130,6 +130,37 @@ function handleUser(user: AppUser) {
 }
 
 
+// --- assertion functions ---
+// Variante de los type guards: en vez de devolver boolean, LANZAN
+// si el valor no cumple. La firma "asserts param is Type" le dice a TS:
+// "si esta función retornó sin lanzar, el tipo quedó narroweado".
+
+function assertIsString(value: unknown): asserts value is string {
+    if (typeof value !== 'string') {
+        throw new Error(`Se esperaba string, llegó ${typeof value}`)
+    }
+}
+
+function processRaw(input: unknown): string {
+    assertIsString(input)
+    return input.toUpperCase()  // de acá en adelante, input es string
+}
+
+// Variante sin tipo: "asserts condition" — narrowing por condición.
+// Útil para invariantes: cosas que "no deberían pasar nunca".
+function assert(condition: unknown, message: string): asserts condition {
+    if (!condition) throw new Error(message)
+}
+
+function getConfigValue(config: { apiUrl?: string }): string {
+    assert(config.apiUrl, 'apiUrl es requerido')
+    return config.apiUrl  // TS sabe que ya no es undefined
+}
+
+// type predicate → para ramificar lógica (if/else con ambos casos válidos)
+// assertion function → para cortar ejecución (el caso inválido es un bug)
+
+
 // ============================================================
 // EJERCICIOS
 // ============================================================

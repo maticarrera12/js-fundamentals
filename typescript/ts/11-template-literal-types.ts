@@ -5,8 +5,9 @@
 // pero a nivel de tipos. Permiten construir tipos de string
 // que representan patrones específicos.
 //
-// Ya los usaste en 02-inference: HeroID y HexadecimalColor.
-// Acá los profundizamos y los combinamos con otras features.
+// Combinados con unions, mapped types y conditional types,
+// desbloquean APIs increíblemente expresivas — son la base de
+// los tipos de librerías como tRPC o los routers tipados.
 // ============================================================
 
 // Básico: concatenar strings literales

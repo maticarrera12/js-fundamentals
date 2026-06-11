@@ -10,7 +10,7 @@
 // --- Arrays ---
 // Dos sintaxis equivalentes:
 
-const roles: string[]    = ['admin', 'editor', 'viewer']
+const roles: string[] = ['admin', 'editor', 'viewer']
 const ids: Array<number> = [1, 2, 3]  // forma genérica — mismo resultado
 
 // Arrays con union types:
@@ -24,8 +24,8 @@ const languages = ['TypeScript', 'Rust', 'Go']  // inferido: string[]
 // Previenen mutación: push, pop, sort, splice, etc. no están disponibles.
 // Útiles para configuraciones, constantes y props de componentes.
 
-const PERMISSIONS: readonly string[]  = ['read', 'write', 'delete']
-const PORTS: ReadonlyArray<number>    = [80, 443, 3000]
+const PERMISSIONS: readonly string[] = ['read', 'write', 'delete']
+const PORTS: ReadonlyArray<number>   = [80, 443, 3000]
 
 // PERMISSIONS.push('admin')  ❌ error: no se puede mutar
 // PERMISSIONS[0] = 'x'       ❌ error: no se puede reasignar
@@ -137,6 +137,36 @@ movementDirection(DirectionMode.Up)
 // Cuándo usar cuál:
 // enum regular → cuando el código se consume desde fuera del módulo
 // const enum   → cuando es solo uso interno, querés menos output JS
+
+
+// --- Alternativa moderna: objeto as const ---
+// Cada vez más equipos evitan los enums: son sintaxis EXTRA que TS
+// compila a JS (no son "tipos borrables"), y eso complica herramientas
+// modernas como el type-stripping de Node 22+ o esbuild.
+// El reemplazo: un objeto as const + un tipo extraído de él.
+
+const ERROR_CODE = {
+    NotFound:     'NOT_FOUND',
+    Unauthorized: 'UNAUTHORIZED',
+    Forbidden:    'FORBIDDEN',
+    Internal:     'INTERNAL',
+} as const
+
+// Una sola fuente de verdad: el tipo se DERIVA del objeto.
+type ErrorCode = (typeof ERROR_CODE)[keyof typeof ERROR_CODE]
+// 'NOT_FOUND' | 'UNAUTHORIZED' | 'FORBIDDEN' | 'INTERNAL'
+
+function reportError(code: ErrorCode): void {
+    console.log(`Error: ${code}`)
+}
+
+reportError(ERROR_CODE.NotFound)  // con el objeto (como un enum)
+reportError('NOT_FOUND')          // o con el literal directo — más flexible que enum
+
+// Ventajas sobre enum:
+// - Es JavaScript puro con un cast — cero magia del compilador
+// - Acepta tanto el literal como la referencia al objeto
+// - El union resultante se integra natural con narrowing y mapped types
 
 
 // ============================================================

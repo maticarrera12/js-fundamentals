@@ -32,7 +32,9 @@ function greet(name: string): string {
 
 // Parámetro opcional con ?  (puede ser undefined)
 // Parámetro con default      (TS infiere el tipo del valor)
-function createUser(name: string, role: string = 'user', bio?: string): object {
+// El retorno se infiere: { name: string; role: string; bio: string | undefined }
+// Nunca anotes `object` como retorno — no dice NADA sobre la forma del objeto.
+function createUser(name: string, role: string = 'user', bio?: string) {
     return { name, role, bio }
 }
 
@@ -56,6 +58,28 @@ function printCoord(pt: { x: number; y: number; label?: string }): void {
 }
 printCoord({ x: 3, y: 7 })
 printCoord({ x: 0, y: 0, label: 'origen' })
+
+
+// --- Record<K, V> ---
+// Cuando el objeto tiene claves dinámicas pero todas del mismo tipo de valor.
+// Record<K, V> es azúcar para { [key: K]: V } — más legible
+
+type Headers = Record<string, string>  // todas las claves string, todos los valores string
+
+const httpHeaders: Headers = {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer token123',
+}
+
+// También funciona con keys literales — restringe exactamente qué claves existen
+type Scores = Record<'math' | 'english' | 'history', number>
+
+const studentScores: Scores = {
+    math: 90,
+    english: 85,
+    history: 78,
+}
+// studentScores.science = 70  ❌ 'science' no es una key válida
 
 
 // --- Type alias ---
@@ -111,6 +135,7 @@ function getLength(text: string | null): number {
 
 // Operador ! (non-null assertion): "confío en que no es null"
 // Si te equivocás, el error es en runtime — usalo con criterio.
+// Se indica que el texto no es null o undefined.
 function getUpperCase(text: string | null): string {
     return text!.toUpperCase()
 }

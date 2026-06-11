@@ -165,7 +165,7 @@
 // - outDir: ./dist
 // - include: los archivos .ts de este directorio
 //
-// Después ejecutá: npx tsc --noEmit
+// Después ejecutá: pnpx tsc --noEmit
 // y fijate qué errores encuentra en los archivos que ya escribiste.
 // Son todos bugs reales — intentá corregir al menos 2.
 

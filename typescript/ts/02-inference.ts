@@ -173,6 +173,34 @@ function createRecord(name: string): Audited {
 }
 
 
+// --- Genéricos (introducción) ---
+// Un genérico es un "parámetro de tipo": le decís a TS
+// "no sé qué tipo entra acá, pero quiero que lo rastree".
+// Se escribe con <T> después del nombre de la función.
+
+// Sin genérico: perdés la información del tipo de retorno
+function identity(value: unknown): unknown {
+    return value
+}
+const result1 = identity('hola')  // result1: unknown — perdiste que era string
+
+// Con genérico: TS sabe qué entra y qué sale
+function identityGeneric<T>(value: T): T {
+    return value
+}
+const result2 = identityGeneric('hola')  // result2: string — tipo preservado
+const result3 = identityGeneric(42)      // result3: number
+
+// El tipo T se infiere automáticamente desde el argumento.
+// También podés pasarlo explícito: identityGeneric<string>('hola')
+
+// Genéricos en tipos: podés usarlos para describir estructuras
+type Result<T> =
+    | { ok: true;  value: T }
+    | { ok: false; error: string }
+// T es el tipo del valor en el caso exitoso — error siempre es string
+
+
 // ============================================================
 // EJERCICIOS
 // ============================================================
