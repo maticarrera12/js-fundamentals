@@ -139,8 +139,7 @@ const topNumber = numberStack.peek() // topNumber es number
 // 1. Escribí una función genérica "last" que devuelva el último
 //    elemento de un array. Si el array está vacío, devuelve undefined.
 //    Tip: el tipo de retorno debería ser T | undefined.
-// Tu código acá:
-
+// Tu código acá:    
 
 // 2. Escribí una función genérica "filterByProperty" que reciba:
 //    - un array de T
