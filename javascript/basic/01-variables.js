@@ -74,7 +74,11 @@ tags.push('react') // ✓ mutar el array está ok
 // Tu código acá:
 
 
-// 2. Creá una const "config" que sea un objeto con host, port y debug.
-//    Modificá el valor de debug a false. ¿Funciona?
-//    Ahora intentá reasignar config a un objeto vacío. ¿Qué pasa?
+// 2. La const NO congela el objeto, solo bloquea la REFERENCIA (lo viste arriba).
+//    Partí de esta línea ya escrita:
+//      const config = { host: 'localhost', port: 3000, debug: true }
+//    a) Cambiá config.debug a false. ¿Funciona? ¿Por qué?
+//    b) Intentá reasignar config = {}. ¿Qué pasa? ¿Por qué?
+//    (La sintaxis de objetos la vemos en detalle en 07-objects. Acá solo
+//     te interesa el comportamiento de const, no dominar objetos todavía.)
 // Tu código acá:

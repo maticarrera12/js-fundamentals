@@ -4,20 +4,40 @@
 // EJERCICIOS
 // ============================================================
 
-// 1. Escribí una función "slugify(title)" que convierta un título
-//    a formato URL: minúsculas, espacios reemplazados por '-',
-//    sin caracteres especiales.
-//    "Hola Mundo! Esto es JS" → "hola-mundo-esto-es-js"
+// 1. Dado: 
+const title = 'Hola Mundo Esto Es JS'
+//    Convertilo a "slug" de URL e imprimí el resultado:
+//    minúsculas y espacios reemplazados por '-' → "hola-mundo-esto-es-js"
+//    (Tip: .toLowerCase() y .replaceAll(' ', '-'))
+// Tu código acá:
+console.log(title.toLowerCase().replaceAll(' ', '-'));
+
+
+
+// 2. Dado: 
+const text = 'Este texto es bastante largo'
+const maxLength = 10
+const dots = '...' // esto lo agregue yo para resolverlo
+//    Si text supera maxLength caracteres, imprimí los primeros maxLength
+//    seguidos de '...'. Si no, imprimí text tal cual.
+//    (Tip: .length, .slice() y el operador ternario)
 // Tu código acá:
 
+let result = text.length > maxLength ? text.slice(0, maxLength).concat(dots) : text
 
-// 2. Escribí una función "truncate(text, maxLength)" que acorte
-//    un string a maxLength caracteres y agregue "..." al final
-//    si fue truncado. Si el texto ya es más corto, devolvelo sin cambios.
+console.log(result);
+
+
+
+// 3. Dado: 
+const data = 'nombre:Matias,edad:25,ciudad:BsAs'
+//    Usando solo métodos de string (.indexOf() y .slice()), extraé e
+//    imprimí el valor del nombre: lo que está entre 'nombre:' y la coma.
+//    Resultado esperado: "Matias"
 // Tu código acá:
 
+let name = data.indexOf(':')
+let coma = data.indexOf(',')
+let nameCutted = data.slice(name + 1, coma)
+console.log(nameCutted);
 
-// 3. Dado el string "nombre:Matias,edad:25,ciudad:BsAs",
-//    parsealo sin usar JSON.parse y convertilo en un objeto:
-//    { nombre: 'Matias', edad: '25', ciudad: 'BsAs' }
-// Tu código acá:

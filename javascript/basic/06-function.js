@@ -52,6 +52,8 @@ console.log(makeObj('Ana')) // { name: 'Ana', role: 'user' }
 // --- Parámetros ---
 // Valores por defecto: se usan si el argumento es undefined.
 // Rest (...args): captura el resto de argumentos como array.
+// (El objeto que devuelve createUser lo vemos en detalle en 07-objects;
+//  el spread/rest a fondo, en 13-destructuring-spreading.)
 
 function createUser(name, role = 'viewer', active = true) {
     return { name, role, active }
@@ -120,8 +122,9 @@ console.log(hello('Matias'))  // 'Hello, Matias!'
 // Tu código acá:
 
 
-// 3. Reescribí createUser usando destructuring en los parámetros
-//    para que se pueda llamar así:
-//    createUser({ name: 'Mati', role: 'admin' })
-//    Mantenés los valores por defecto.
+// 3. Escribí una función "formatPrice(amount, currency = 'USD')" que
+//    devuelva un string tipo '100 USD' usando un template literal.
+//    Probala con un solo argumento y con los dos, para ver el parámetro
+//    por defecto en acción.
+//    (Recibir los datos como un objeto y desestructurarlos llega en 13.)
 // Tu código acá:

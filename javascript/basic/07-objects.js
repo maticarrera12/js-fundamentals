@@ -93,7 +93,7 @@ const reference = original     // misma referencia
 reference.x = 99
 console.log(original.x)        // 99 — original también cambió
 
-// Para copiar, usá spread (shallow copy):
+// Para copiar, usá spread (shallow copy). El spread a fondo se ve en 13:
 const copy = { ...original }
 copy.x = 1
 console.log(original.x)        // 99 — original no cambió

@@ -86,7 +86,8 @@ switch (month) {
 // switch   → una variable contra valores exactos fijos (como una enum o código de error)
 // ternario → asignación simple con dos resultados
 //
-// Para múltiples condiciones con return, el "early return" es muy limpio:
+// Para múltiples condiciones con return, el "early return" es muy limpio
+// (las funciones y return se ven en detalle en 06-function; acá es solo un ejemplo):
 
 function classify(n) {
     if (n < 0)  return 'negativo'
@@ -100,17 +101,17 @@ function classify(n) {
 // EJERCICIOS
 // ============================================================
 
-// 1. Escribí una función "getDiscount(userType, total)" que calcule
-//    un descuento basado en el tipo de usuario y el total de la compra:
-//    - 'vip': 20% si total > 1000, 10% si no
+// 1. Dado: const userType = 'vip' y const total = 1500
+//    Usando if/else, calculá e imprimí el precio final aplicando el descuento:
+//    - 'vip': 20% si total > 1000, si no 10%
 //    - 'member': 5%
 //    - cualquier otro: 0%
-//    Devuelve el precio final.
+//    (Probá cambiando userType y total a mano y volvé a correr.)
 // Tu código acá:
 
 
-// 2. Reescribí la función classify() de arriba usando un objeto
-//    como tabla de decisión en vez de if/else.
-//    Pista: { negative: ..., zero: ..., ... } no aplica directo acá,
-//    pero podés pensar cómo evitar los if con un array de rangos + find.
+// 2. Dado: const day = 3   (0 = Domingo, 1 = Lunes, ... 6 = Sábado)
+//    Usando switch, imprimí 'Finde' si es sábado o domingo, y 'Laborable'
+//    en cualquier otro caso. Aprovechá el fallthrough para agrupar los days.
+//    (Probá cambiando day.)
 // Tu código acá:

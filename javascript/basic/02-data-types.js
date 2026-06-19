@@ -108,9 +108,10 @@ console.log(null === undefined)  // false
 // Tu código acá:
 
 
-// 2. ¿Cuál es la diferencia entre null y undefined en código real?
-//    Creá una función "getUserRole(user)" que devuelva:
-//    - undefined si user no existe (no fue pasado)
-//    - null si user existe pero no tiene rol
-//    - el rol si existe
+// 2. Diferencia entre null y undefined en código real:
+//    a) Declará "let a" sin asignarle valor y mostrá typeof a.
+//    b) Declará "let b = null" y mostrá typeof b.
+//       ¿Cuál de los dos resultados te sorprende? Explicalo en un comentario.
+//    c) En un comentario, resumí cuándo usás null (una ausencia que ponés
+//       vos a propósito) vs cuándo aparece undefined (la que deja JS).
 // Tu código acá:

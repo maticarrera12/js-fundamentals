@@ -83,6 +83,7 @@ const tax   = 0.21
 console.log(`Precio: $${price} + IVA = $${(price * (1 + tax)).toFixed(2)}`)
 
 // Tagged templates: una función que procesa el template literal
+// (las funciones las vemos en detalle en 06-function; acá es solo un ejemplo)
 function highlight(strings, ...values) {
     return strings.reduce((acc, str, i) =>
         acc + str + (values[i] !== undefined ? `[${values[i]}]` : ''), '')
@@ -95,20 +96,23 @@ console.log(highlight`Hola ${name}, tu puntaje es ${100}`)
 // EJERCICIOS
 // ============================================================
 
-// 1. Escribí una función "slugify(title)" que convierta un título
-//    a formato URL: minúsculas, espacios reemplazados por '-',
-//    sin caracteres especiales.
-//    "Hola Mundo! Esto es JS" → "hola-mundo-esto-es-js"
+// 1. Dado: const title = 'Hola Mundo Esto Es JS'
+//    Convertilo a "slug" de URL e imprimí el resultado:
+//    minúsculas y espacios reemplazados por '-' → "hola-mundo-esto-es-js"
+//    (Tip: .toLowerCase() y .replaceAll(' ', '-'))
 // Tu código acá:
 
 
-// 2. Escribí una función "truncate(text, maxLength)" que acorte
-//    un string a maxLength caracteres y agregue "..." al final
-//    si fue truncado. Si el texto ya es más corto, devolvelo sin cambios.
+// 2. Dado: const text = 'Este texto es bastante largo' y const maxLength = 10
+//    Si text supera maxLength caracteres, imprimí los primeros maxLength
+//    seguidos de '...'. Si no, imprimí text tal cual.
+//    (Tip: .length, .slice() y el operador ternario)
 // Tu código acá:
 
 
-// 3. Dado el string "nombre:Matias,edad:25,ciudad:BsAs",
-//    parsealo sin usar JSON.parse y convertilo en un objeto:
-//    { nombre: 'Matias', edad: '25', ciudad: 'BsAs' }
+// 3. Dado: const data = 'nombre:Matias,edad:25,ciudad:BsAs'
+//    Usando solo métodos de string (.indexOf() y .slice()), extraé e
+//    imprimí el valor del nombre: lo que está entre 'nombre:' y la coma.
+//    Resultado esperado: "Matias"
+//    (Armar un objeto con todos los pares lo vas a hacer en 07-objects.)
 // Tu código acá:

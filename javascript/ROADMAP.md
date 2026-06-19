@@ -34,86 +34,77 @@ Los bloques más básicos del lenguaje.
 
 ---
 
-## Etapa 1 — Estructuras de datos (basic/06-10)
+## Etapa 1 — Abstracción: funciones y objetos (basic/06-07)
 
-Cómo guardar y recorrer colecciones de datos.
+Las dos herramientas con las que modelás todo lo demás: funciones (empaquetar comportamiento) y objetos (modelar datos). Van temprano porque las vas a usar en cada archivo que sigue.
 
 | Archivo | Temas |
 |---------|-------|
-| `06-array.js` | Arrays, acceso con `.at()`, push/pop/shift/unshift/splice, slice, sort, métodos funcionales (map/filter/reduce) |
-| `07-sets.js` | Set — colección de valores únicos |
-| `08-map.js` | Map — diccionario con keys de cualquier tipo |
-| `09-loops.js` | for, while, do-while, for...of, **for...in** |
-| `10-iterables.js` | Protocolo iterable, Symbol.iterator |
+| `06-function.js` | Declaración, expresión, arrow, parámetros default, funciones de orden superior |
+| `07-objects.js` | Literales, acceso, iteración, referencia vs valor |
 
-**Por qué este orden**: los loops van después de arrays porque el primer uso real es iterar colecciones.
+**Por qué este orden**: hasta acá (00-05) escribiste código directo, línea por línea. Ahora aprendés a empaquetarlo en funciones reutilizables y a modelar datos con objetos. El estudio profundo de scope, closures y `this` queda para `20-scope-and-this.js` (Etapa 4), cuando ya hayas usado funciones muchas veces.
+
+**Señal para avanzar**: podés escribir una función con parámetros default y explicar por qué `obj1 === obj2` es `false` aunque tengan los mismos datos.
+
+**Lectura complementaria** (javascript.info):
+- "Functions" + "Function expressions" + "Arrow functions, the basics" → 1h
+- "Objects" → 1h — foco en paso por referencia, origen de bugs eternos
+- "Object references and copying" → 1h — crítico para React: mutación vs inmutabilidad
+- "Object methods, this" → 1h (intro; el detalle profundo va en Etapa 4)
+
+---
+
+## Etapa 2 — Estructuras de datos (basic/08-12)
+
+Cómo guardar y recorrer colecciones. Ahora que tenés funciones, los métodos como `.map`/`.filter` cobran sentido.
+
+| Archivo | Temas |
+|---------|-------|
+| `08-array.js` | Arrays, acceso con `.at()`, push/pop/shift/unshift/splice, slice, sort, métodos funcionales (map/filter/reduce) |
+| `09-loops.js` | for, while, do-while, for...of, **for...in** |
+| `10-sets.js` | Set — colección de valores únicos |
+| `11-map.js` | Map — diccionario con keys de cualquier tipo |
+| `12-iterables.js` | Protocolo iterable, Symbol.iterator |
+
+**Por qué este orden**: arrays primero porque sus métodos funcionales (`.map`, `.filter`, `.reduce`) usan las funciones que aprendiste en la Etapa 1. Loops después, para recorrer lo que ya conocés (arrays, objetos, strings). Sets y Map cierran las colecciones, e iterables explica el mecanismo detrás de `for...of`.
 
 **Señal para avanzar**: sabés cuándo usar Array vs Set vs Map, y la diferencia entre for...of y for...in.
 
 **Lectura complementaria** (javascript.info → sección *Data types*):
-- "Conditional branching" + "Loops" → 30 min (repaso rápido si ya los conocés)
 - **"Arrays" + "Array methods" → 3h** — `.map`, `.filter`, `.reduce` son la columna vertebral de React; acá invertí tiempo
+- "Conditional branching" + "Loops" → 30 min (repaso rápido si ya los conocés)
 - "Map and Set" → 30 min
 - "Iterables" → 30 min (concepto, no detalles)
 - "Object.keys, values, entries" → 20 min
 
 ---
 
-## Etapa 2 — Funciones y scope (basic/11 + basic/20)
+## Etapa 3 — Destructuring y clases (basic/13-15)
 
-El corazón de JavaScript. Sin entender esto, todo lo demás es frágil.
-
-| Archivo | Temas |
-|---------|-------|
-| `11-function.js` | Declaración, expresión, arrow, parámetros default, funciones de orden superior |
-| `20-scope-and-this.js` | Lexical scope, scope chain, **closures**, **this**, call/apply/bind |
-
-**Por qué juntos**: closures son el resultado directo de entender scope. `this` y call/apply/bind son el resultado directo de entender cómo se llaman las funciones.
-
-**Señal para avanzar**: podés predecir qué imprime un closure sin ejecutarlo, y explicar qué es `this` en un método, en una función normal y en una arrow function.
-
-**Lectura complementaria** (javascript.info → sección *Advanced working with functions*):
-- "Functions" + "Function expressions" + "Arrow functions, the basics" → 1h (antes de closures)
-- **"Variable scope, closure" → 3-4h** — leelo dos veces, hacé todos los ejercicios; no hay atajo acá
-- "The old var" → 20 min (no vas a usar `var`, pero entendés por qué `let` y `const` existen)
-- "Global object" → 15 min
-- "Function object, NFE" → 1h
-- "Decorators and forwarding, call/apply" → 1h
-- "Function binding" → 1h — por qué los métodos pueden perder `this` en React
-- YDKJS: *Scope & Closures*, capítulos 1–3 (en paralelo con closure)
-- Lydia Hallie: *JavaScript Visualized: Scope (Chain)*, *Hoisting*
-
----
-
-## Etapa 3 — Objetos y clases (basic/12-15)
-
-Cómo modelar datos y comportamiento.
+Azúcar sintáctico para extraer datos y modelar comportamiento con herencia.
 
 | Archivo | Temas |
 |---------|-------|
-| `12-objects.js` | Literales, acceso, iteración, referencia vs valor |
 | `13-destructuring-spreading.js` | Destructuring de arrays y objetos, spread, **rest** |
 | `14-class.js` | Clases, private fields (#), getters/setters |
 | `15-class-heritage.js` | extends, super, static |
 
 **Por qué este orden**: destructuring antes de clases porque los constructores modernos lo usan. Herencia al final porque requiere entender la clase base primero.
 
-**Señal para avanzar**: entendés por qué `obj1 === obj2` es `false` aunque tengan los mismos datos.
+**Señal para avanzar**: podés desestructurar una respuesta de API anidada y escribir una clase con campos privados (#) y getters.
 
 **Lectura complementaria** (javascript.info → sección *Objects: the basics*):
-- "Objects" → 1h — foco en paso por referencia, origen de bugs eternos
-- "Object references and copying" → 1h — crítico para React: mutación vs inmutabilidad
-- "Garbage collection" → 30 min (conceptual, limpia ideas)
-- **"Object methods, this" → 2h** — acá no escatimes
 - "Destructuring assignment" → 1h — lo usás en cada componente de React
 - "Methods of primitives" → 30 min
-- Lydia Hallie: *JavaScript Visualized: The this keyword*
+- **"Class basic syntax" + "Class inheritance" → 2h**
+- "Static properties and methods" + "Private and protected properties" → 1h
 
 ---
 
 ## Etapa 4 — Herramientas esenciales (basic/16-21)
 
-Lo que usás en cada proyecto real.
+Lo que usás en cada proyecto real — más el estudio profundo de funciones (scope, closures, `this`), que dejamos para acá porque recién ahora tenés suficiente práctica con funciones.
 
 | Archivo | Temas |
 |---------|-------|
@@ -121,14 +112,22 @@ Lo que usás en cada proyecto real.
 | `17-console.methods.js` | console.table, group, time — debugging real |
 | `18-export-modules.js` | export, export default |
 | `19-import-modules.js` | import estático, import dinámico |
+| `20-scope-and-this.js` | Lexical scope, scope chain, **closures**, **this**, call/apply/bind |
 | `21-json.js` | JSON.stringify, JSON.parse, structuredClone |
 
-**Señal para avanzar**: podés crear un módulo con múltiples exports, importarlo desde otro archivo, y manejar errores de JSON correctamente.
+**Por qué scope va acá**: closures son el resultado directo de entender scope, y `this` el de entender cómo se llaman las funciones. Necesitás haber escrito muchas funciones antes (Etapas 1-3) para que esto cale.
+
+**Señal para avanzar**: podés predecir qué imprime un closure sin ejecutarlo, explicar qué es `this` en un método, una función normal y una arrow, y crear un módulo con múltiples exports.
 
 **Lectura complementaria** (javascript.info):
+- **"Variable scope, closure" → 3-4h** — leelo dos veces, hacé todos los ejercicios; no hay atajo acá
+- "The old var" → 20 min — entendés por qué `let` y `const` existen
+- "Global object" + "Function object, NFE" → 1h15
+- "Decorators and forwarding, call/apply" + "Function binding" → 2h — por qué los métodos pueden perder `this` en React
 - "JSON methods, toJSON" → 30 min
-- "Modules, introduction" + "Export and import" → 1h
-- "Dynamic imports" → 20 min — importante: Next.js lo usa para code splitting
+- "Modules, introduction" + "Export and import" + "Dynamic imports" → 1h20 — Next.js usa dynamic imports para code splitting
+- YDKJS: *Scope & Closures*, capítulos 1–3
+- Lydia Hallie: *JavaScript Visualized: Scope (Chain)*, *Hoisting*, *The this keyword*
 
 ---
 
@@ -138,14 +137,14 @@ Con la base sólida, estos archivos profundizan cómo funciona JS en la práctic
 
 | Archivo | Temas | Por qué acá |
 |---------|-------|-------------|
-| `intermediate/01-advanced-functions.js` | First-class functions, IIFE, rest/spread, closures, recursión, partial application, currying, memoization, pipe | Cierra el entendimiento de closures — requiere Etapa 2 |
-| `intermediate/02-advanced-structures.js` | Array methods funcionales, Set/Map avanzados | Requiere conocer los métodos básicos de Etapa 1 |
+| `intermediate/01-advanced-functions.js` | First-class functions, IIFE, rest/spread, closures, recursión, partial application, currying, memoization, pipe | Cierra el entendimiento de closures — requiere funciones (Etapa 1) y closures (Etapa 4) |
+| `intermediate/02-advanced-structures.js` | Array methods funcionales, Set/Map avanzados | Requiere conocer los métodos básicos de Etapa 2 |
 | `intermediate/03-object.js` | Prototipos, Object.create, Object.keys/values/entries | Después de clases — entendés qué hay debajo del azúcar sintáctico |
 | `intermediate/04-classes-advanced.js` | Mixins (higher-order class), Singleton, Symbol vs private fields (#), Proxy, EventEmitter | Requiere herencia de Etapa 3 |
 | `intermediate/05-async.js` | Event loop, callbacks, Promises, async/await, Promise.all/allSettled/race | Requiere entender funciones bien — es el tema más importante de esta etapa |
 | `intermediate/06-api.js` | fetch, headers, manejo de respuestas | Después de async — aplicación directa |
 | `intermediate/07-regex.js` | Expresiones regulares — buscar, validar, transformar texto | Requiere dominar strings — independiente del resto |
-| `intermediate/08-generators.js` | function*, yield, iteradores infinitos, async generators | Requiere iterables (Etapa 1) y async (05) |
+| `intermediate/08-generators.js` | function*, yield, iteradores infinitos, async generators | Requiere iterables (Etapa 2) y async (05) |
 | `intermediate/dom/07-dom.js` | DOM manipulation: selectores, atributos, classList, crear/insertar/eliminar nodos | Requiere todo lo anterior — es la interfaz con el browser |
 | `intermediate/dom/08-events.js` | addEventListener, bubbling, **event delegation**, preventDefault, submit, custom events | La otra mitad del DOM. Delegation es la base de cómo React maneja eventos — y del proyecto 2 |
 
