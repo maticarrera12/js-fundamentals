@@ -1,4 +1,41 @@
 // ============================================================
+// CALENTAMIENTO — un mecanismo por vez
+// ============================================================
+// Micro-ejercicios. Cada uno aísla UN solo mecanismo del archivo.
+// Resolvelos en orden: cuando los tengas, los ejercicios de abajo
+// dejan de ser un salto al vacío.
+
+type Modal = {
+    title: string
+    open: boolean
+}
+
+// C1. as simple. Escribí "getModalElement(): HTMLDivElement" que use
+//     document.getElementById('modal') y haga "as HTMLDivElement"
+//     sobre el resultado (asumí que siempre existe).
+// Tu código acá:
+
+
+// C2. instanceof vs as. Escribí "getModalTitle(): string | null" que
+//     use document.querySelector('.modal-title') y, en vez de "as",
+//     narrowee con "instanceof HTMLElement" antes de leer ".textContent".
+// Tu código acá:
+
+
+// C3. as const sobre un literal. Declará "modalSize = 'medium' as const".
+//     Confirmá que el tipo inferido es el literal 'medium', no string.
+//     Después declará "modalSizeWide: string = 'medium'" SIN as const
+//     y notá la diferencia de tipo entre ambas.
+// Tu código acá:
+
+
+// C4. satisfies básico. Creá un objeto "defaultModal" con title: 'Aviso'
+//     y open: false, usando "satisfies Modal". Verificá que podés
+//     llamar .toUpperCase() en defaultModal.title sin narrowear.
+// Tu código acá:
+
+
+// ============================================================
 // EJERCICIOS
 // ============================================================
 

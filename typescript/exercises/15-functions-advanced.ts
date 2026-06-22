@@ -1,4 +1,44 @@
 // ============================================================
+// CALENTAMIENTO — un mecanismo por vez
+// ============================================================
+// Micro-ejercicios. Cada uno aísla UN solo mecanismo del archivo.
+// Resolvelos en orden: cuando los tengas, los ejercicios de abajo
+// dejan de ser un salto al vacío.
+
+interface Item {
+    id: number
+    label: string
+}
+
+// C1. Call signature con propiedad. Escribí el type "Counter": una
+//     función que se llama sin args y devuelve number, y que ADEMÁS
+//     tiene una propiedad "count: number".
+//     Esperado: declare const c: Counter; c() es number; c.count es number.
+// Tu código acá:
+
+
+// C2. Overload mínimo. Escribí dos firmas + 1 implementación para
+//     "wrap(value: number): number[]" y "wrap(value: string): string[]".
+//     La implementación recibe "value: number | string" y devuelve
+//     un array de un solo elemento ([value]).
+// Tu código acá:
+
+
+// C3. Tipando this. Escribí una interface "ItemList" con:
+//     - items: Item[]
+//     - findById(predicate: (this: ItemList, id: number) => Item | undefined): Item | undefined
+//     No la implementes — solo declarala. Pregunta: ¿por qué el
+//     pseudo-parámetro "this" no aparece cuando LLAMÁS a findById?
+// Tu código acá:
+
+
+// C4. Construct signature. Escribí "buildItem(ItemClass: new (id: number, label: string) => Item): Item"
+//     que reciba una CLASE (no una instancia) y devuelva una instancia
+//     llamándola con new. Probala con una clase simple que implemente Item.
+// Tu código acá:
+
+
+// ============================================================
 // EJERCICIOS
 // ============================================================
 

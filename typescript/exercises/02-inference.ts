@@ -1,4 +1,41 @@
 // ============================================================
+// CALENTAMIENTO — un mecanismo por vez
+// ============================================================
+// Micro-ejercicios. Cada uno aísla UN solo mecanismo del archivo.
+// Resolvelos en orden: cuando los tengas, los ejercicios de abajo
+// dejan de ser un salto al vacío.
+
+type Pet = {
+    name: string
+    species: 'dog' | 'cat' | 'bird'
+}
+
+// C1. Inferencia. Declará "petCount" asignándole 3 SIN anotar el tipo,
+//     y "petName" asignándole 'Rex' SIN anotar el tipo. Pasá el mouse
+//     (o leé el tipo en tu editor) y confirmá qué infirió TS para cada una.
+// Tu código acá:
+
+
+// C2. unknown + narrowing. Escribí "describePet(input: unknown): string"
+//     que devuelva "es un Pet: ${nombre}" si "input" tiene la forma de
+//     Pet (usá un type guard con "typeof" y "in"), o "no es un Pet" si no.
+// Tu código acá:
+
+
+// C3. typeof para derivar tipos. Tenés:
+//     const samplePet = { name: 'Rex', species: 'dog' as const }
+//     Sin escribir un type a mano, usá "typeof samplePet" para tipar el
+//     parámetro de "feedPet(pet: typeof samplePet): string".
+// Tu código acá:
+
+
+// C4. Genérico simple. Escribí "wrapInArray<T>(value: T): T[]" que
+//     devuelva un array de un solo elemento, preservando el tipo de T.
+//     Esperado para wrapInArray('Rex'): string[]  (no unknown[])
+// Tu código acá:
+
+
+// ============================================================
 // EJERCICIOS
 // ============================================================
 

@@ -61,6 +61,25 @@ console.log(dedupe(['a', 'b', 'a', 'c', 'b']))  // ['a', 'b', 'c']
 
 
 // ============================================================
+// MÉTODOS MÁS USADOS (referencia rápida)
+// ============================================================
+//   add(x)        agrega x (lo ignora si ya está); devuelve el Set (encadenable)
+//   delete(x)     elimina x; devuelve true si existía
+//   has(x)        true/false si x está — O(1), más rápido que includes
+//   clear()       vacía el Set
+//   size          cantidad de elementos (propiedad, NO método: sin paréntesis)
+//   forEach(fn)   ejecuta fn por elemento
+//   values()      iterador de valores (keys() es un alias en Set)
+//
+// Operaciones de conjuntos (ES2024 — Node 22+ / navegadores recientes):
+//   a.union(b)               todos los de a y b
+//   a.intersection(b)        los que están en ambos
+//   a.difference(b)          los de a que no están en b
+//   a.symmetricDifference(b) los que están en uno u otro, pero no en ambos
+//   a.isSubsetOf(b) · isSupersetOf(b) · isDisjointFrom(b)
+
+
+// ============================================================
 // EJERCICIOS
 // ============================================================
 

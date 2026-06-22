@@ -1,3 +1,41 @@
+// ============================================================
+// CALENTAMIENTO — un mecanismo por vez
+// ============================================================
+// Micro-ejercicios. Cada uno aísla UN solo mecanismo del archivo.
+// Resolvelos en orden: cuando los tengas, los ejercicios de abajo
+// dejan de ser un salto al vacío.
+
+// C1. declare const. Declará una variable ambient "BUILD_ID: string"
+//     (como si un bundler la inyectara en runtime) y usala en una
+//     línea de código sin importarla.
+// Tu código acá:
+
+
+// C2. declare module mínimo. Escribí la declaración ambient para
+//     un módulo sin tipos llamado 'left-pad' que expone una sola
+//     función: leftPad(value: string, length: number): string.
+// Tu código acá:
+
+
+// C3. Declaration merging sobre un tipo propio. Declará dos veces
+//     la misma interface "Account" en bloques separados —una con
+//     "id: number", otra con "owner: string"— y comprobá que TS
+//     las fusiona en un solo tipo con ambas propiedades.
+//     Esperado: const acc: Account = { id: 1, owner: 'Matias' }
+// Tu código acá:
+
+
+// C4. Pensalo, no lo escribas todavía: si quisieras agregarle un
+//     método "first()" a Array<T> a nivel global (como en la PARTE 5),
+//     ¿con qué keyword + bloque envolvés la declaración? Escribí
+//     solo la firma del método dentro de ese bloque.
+// Tu código acá:
+
+
+// ============================================================
+// EJERCICIOS
+// ============================================================
+
 // 1. Creá un archivo "globals.d.ts" en este directorio con:
 //    - Una variable global: ENVIRONMENT: 'development' | 'production' | 'test'
 //    - Una variable global: API_BASE_URL: string

@@ -24,10 +24,17 @@ function repeat(fn, times, i = 0) {
 //    Ejemplo: compose(double, addOne)(3) → double(addOne(3)) → 8
 // Tu código acá:
 
+const compose = (f, g) => value => f(g(value));
+
 
 // 3. Escribí una función "formatPrice(amount, currency = 'USD')" que
 //    devuelva un string tipo '100 USD' usando un template literal.
 //    Probala con un solo argumento y con los dos, para ver el parámetro
 //    por defecto en acción.
-//    (Recibir los datos como un objeto y desestructurarlos llega en 13.)
+
+const formatPrice = (amount, currency = "USD") => `${amount} ${currency}`
+
+console.log(formatPrice(100));
+console.log(formatPrice(200, "EUR"));
+
 // Tu código acá:

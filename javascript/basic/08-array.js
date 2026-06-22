@@ -99,6 +99,46 @@ const total      = prices.reduce((acc, p) => acc + p, 0)
 
 
 // ============================================================
+// MÉTODOS MÁS USADOS (referencia rápida)
+// ============================================================
+// ⚠ = MUTA el original. El resto devuelve un valor nuevo y deja el array intacto.
+
+// — Agregar / quitar —
+// ⚠ push(...items)      agrega al final, devuelve la nueva length
+// ⚠ pop()               quita y devuelve el último
+// ⚠ unshift(...items)   agrega al inicio, devuelve la nueva length
+// ⚠ shift()             quita y devuelve el primero
+// ⚠ splice(i, n, ...x)  desde i quita n elementos e inserta x; devuelve lo quitado
+
+// — Copiar / extraer (NO mutan) —
+//   slice(i, fin)       copia el tramo [i, fin) — fin no incluido
+//   concat(otro)        une arrays en uno nuevo
+//   at(i)               elemento por índice (acepta negativos: at(-1))
+//   join(sep)           une todo en un string
+
+// — Buscar —
+//   includes(x)         true/false si x está
+//   indexOf(x)          índice de x, o -1 si no está
+//   find(fn)            primer elemento que cumple fn
+//   findIndex(fn)       índice del primero que cumple fn
+//   some(fn)            true si AL MENOS uno cumple
+//   every(fn)           true si TODOS cumplen
+
+// — Transformar (NO mutan, devuelven nuevo array) —
+//   map(fn)             transforma cada elemento
+//   filter(fn)          deja solo los que cumplen
+//   reduce(fn, init)    acumula todo en un solo valor
+//   flat(depth)         aplana arrays anidados
+//   flatMap(fn)         map + flat(1) en un paso
+//   forEach(fn)         ejecuta fn por elemento (no devuelve nada)
+
+// — Ordenar (MUTAN) —
+// ⚠ sort((a, b) => a - b)  ordena (pasá comparador para números)
+// ⚠ reverse()              invierte el orden
+//   Para NO mutar, ordená sobre una copia: [...arr].sort(...)
+
+
+// ============================================================
 // EJERCICIOS
 // ============================================================
 

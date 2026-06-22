@@ -1,5 +1,5 @@
 // ============================================================
-// 12 - OBJETOS
+// 07 - OBJETOS
 // ============================================================
 // Un objeto es una colección de pares clave-valor.
 // Es la estructura de datos central de JavaScript —
@@ -121,6 +121,31 @@ for (const [key, value] of Object.entries(config)) {
 // Verificar si una propiedad existe:
 console.log('host' in config)               // true — incluye heredadas
 console.log(Object.hasOwn(config, 'host'))  // true — solo propias (moderno)
+
+
+// ============================================================
+// MÉTODOS MÁS USADOS (referencia rápida)
+// ============================================================
+// Casi todos son métodos ESTÁTICOS de Object (Object.algo(obj)), no del objeto en sí.
+
+// — Leer claves / valores —
+//   Object.keys(obj)         array de claves
+//   Object.values(obj)       array de valores
+//   Object.entries(obj)      array de pares [clave, valor]
+//   Object.fromEntries(arr)  reconstruye un objeto desde pares [clave, valor]
+
+// — Copiar / combinar —
+//   { ...obj }               shallow copy (spread) — la forma más común
+//   Object.assign(dest, a, b) copia props de a y b sobre dest (MUTA dest, lo devuelve)
+//   structuredClone(obj)     deep copy real (es global, no de Object)
+
+// — Inspeccionar —
+//   'key' in obj             true si existe (incluye heredadas del prototipo)
+//   Object.hasOwn(obj, k)    true solo si es propia (preferilo a hasOwnProperty)
+
+// — Proteger —
+//   Object.freeze(obj)       congela: no se puede agregar/cambiar/borrar (shallow)
+//   Object.isFrozen(obj)     true/false
 
 
 // ============================================================

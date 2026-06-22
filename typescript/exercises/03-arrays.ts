@@ -1,4 +1,41 @@
 // ============================================================
+// CALENTAMIENTO — un mecanismo por vez
+// ============================================================
+// Micro-ejercicios. Cada uno aísla UN solo mecanismo del archivo.
+// Resolvelos en orden: cuando los tengas, los ejercicios de abajo
+// dejan de ser un salto al vacío.
+
+type Track = {
+    title: string
+    durationSeconds: number
+}
+
+// C1. Tupla fija. Definí "Pair" como [string, number]. Creá una
+//     constante "firstTrack: Pair" con un título y su duración.
+//     Desestructurá "firstTrack" en dos variables "title" y "seconds".
+// Tu código acá:
+
+
+// C2. Readonly array. Declará "GENRES: readonly string[]" con al menos
+//     tres géneros musicales. Escribí "hasGenre(genre: string): boolean"
+//     que use GENRES.includes(genre). Confirmá que GENRES.push(...) da error.
+// Tu código acá:
+
+
+// C3. as const + indexed type. Definí "PLAYLIST_NAMES" como array as const
+//     con tres nombres de playlist. Extraé "PlaylistName" usando
+//     "typeof PLAYLIST_NAMES[number]".
+//     Esperado para PlaylistName: union de los 3 literales que pusiste.
+// Tu código acá:
+
+
+// C4. Enum básico. Definí un enum "PlaybackState" con: Playing, Paused,
+//     Stopped. Escribí "describeState(state: PlaybackState): string"
+//     con un switch que devuelva una descripción para cada valor.
+// Tu código acá:
+
+
+// ============================================================
 // EJERCICIOS
 // ============================================================
 

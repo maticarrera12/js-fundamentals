@@ -1,4 +1,44 @@
 // ============================================================
+// CALENTAMIENTO — un mecanismo por vez
+// ============================================================
+// Micro-ejercicios. Cada uno aísla UN solo mecanismo del archivo.
+// Resolvelos en orden: cuando los tengas, los ejercicios de abajo
+// dejan de ser un salto al vacío.
+
+interface Account {
+    id: number
+    owner: string
+    balance: number
+}
+
+// C1. La sintaxis base. Escribí "AccountId", un template literal type
+//     que matchee el patrón `acc_${number}`.
+//     Esperado: 'acc_42' es válido, 'acc_abc' NO lo es.
+// Tu código acá:
+
+
+// C2. Union que se expande. Tenés esta union:
+type Currency = 'USD' | 'ARS' | 'EUR'
+//     Escribí "PriceLabel", un template literal type que combine
+//     'price-' con cada Currency.
+//     Esperado: 'price-USD' | 'price-ARS' | 'price-EUR'
+// Tu código acá:
+
+
+// C3. Utility type de string. Escribí "ShoutOwner<T>" que devuelva
+//     T en mayúsculas (usá Uppercase).
+//     Esperado: ShoutOwner<'matias'> → 'MATIAS'
+// Tu código acá:
+
+
+// C4. Combinar con mapped types (como Getters de arriba, pero
+//     vos lo escribís). Escribí "AccountGetters" que mapee cada
+//     key de Account a un getter `get${Capitalize<K>}`.
+//     Esperado: { getId: () => number; getOwner: () => string; getBalance: () => number }
+// Tu código acá:
+
+
+// ============================================================
 // EJERCICIOS
 // ============================================================
 

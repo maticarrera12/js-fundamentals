@@ -1,4 +1,40 @@
 // ============================================================
+// CALENTAMIENTO — un mecanismo por vez
+// ============================================================
+// Micro-ejercicios. Cada uno aísla UN solo mecanismo del archivo.
+// Resolvelos en orden: cuando los tengas, los ejercicios de abajo
+// dejan de ser un salto al vacío.
+
+type Cat = { meow: () => void }
+type Robot = { beep: () => void }
+
+// C1. typeof. Escribí "double" que reciba string | number.
+//     Si es number, devolvé el doble (number). Si es string,
+//     devolvé el string repetido dos veces (string).
+// Tu código acá:
+
+
+// C2. operador "in". Escribí "makeNoise" que reciba Cat | Robot
+//     y llame a "meow()" si el objeto tiene esa propiedad, o a
+//     "beep()" en caso contrario. Usá el operador "in" para narrowear.
+// Tu código acá:
+
+
+// C3. instanceof. Escribí "describeError" que reciba "unknown".
+//     Si es instancia de "Error", devolvé `Error: ${error.message}`.
+//     Si no, devolvé 'Valor desconocido'.
+// Tu código acá:
+
+
+// C4. discriminated union (mini). Definí los tipos "Square"
+//     ({ kind: 'square', side: number }) y "Line"
+//     ({ kind: 'line', length: number }). Escribí "getLength"
+//     que reciba Square | Line y devuelva el lado o el largo
+//     según corresponda, usando un switch sobre "kind".
+// Tu código acá:
+
+
+// ============================================================
 // EJERCICIOS
 // ============================================================
 

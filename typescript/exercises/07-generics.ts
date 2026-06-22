@@ -1,4 +1,41 @@
 // ============================================================
+// CALENTAMIENTO — un mecanismo por vez
+// ============================================================
+// Micro-ejercicios. Cada uno aísla UN solo mecanismo del archivo.
+// Resolvelos en orden: cuando los tengas, los ejercicios de abajo
+// dejan de ser un salto al vacío.
+
+interface Pet {
+    id: number
+    name: string
+}
+
+// C1. Función genérica básica. Escribí "identity<T>" que reciba
+//     un valor de tipo T y lo devuelva sin modificar (T → T).
+//     Probala con identity(5) y identity('hola') — fijate que
+//     TS infiere number y string respectivamente, no any.
+// Tu código acá:
+
+
+// C2. Generic interface. Escribí la interface "Box<T>" con una
+//     sola propiedad "content: T". Creá un "Box<Pet>" y un
+//     "Box<string>" para confirmar que es reutilizable.
+// Tu código acá:
+
+
+// C3. Constraint (extends). Escribí "getName<T extends Pet>"
+//     que reciba un T y devuelva "item.name" (string). Probá
+//     que falla si le pasás un objeto sin "name".
+// Tu código acá:
+
+
+// C4. keyof. Escribí "pluck<T, K extends keyof T>" que reciba
+//     un objeto T y una key K, y devuelva T[K].
+//     Esperado: pluck(pet, 'name') tipa como string.
+// Tu código acá:
+
+
+// ============================================================
 // EJERCICIOS
 // ============================================================
 

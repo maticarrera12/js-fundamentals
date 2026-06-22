@@ -142,6 +142,44 @@ function getUpperCase(text: string | null): string {
 
 
 // ============================================================
+// CALENTAMIENTO — un mecanismo por vez
+// ============================================================
+// Micro-ejercicios. Cada uno aísla UN solo mecanismo del archivo.
+// Resolvelos en orden: cuando los tengas, los ejercicios de abajo
+// dejan de ser un salto al vacío.
+
+type Book = {
+    title: string
+    pages: number
+    available: boolean
+}
+
+// C1. Primitivos. Declará tres variables: "bookTitle" (string),
+//     "totalPages" (number) y "isAvailable" (boolean), anotando
+//     el tipo explícitamente aunque TS lo pueda inferir solo.
+// Tu código acá:
+
+
+// C2. Función con parámetro opcional. Escribí "describeBook(book: Book,
+//     note?: string): string" que devuelva el título y, si "note" vino,
+//     lo agregue al final del string.
+// Tu código acá:
+
+
+// C3. Union + narrowing. Escribí "formatPages(value: string | number): string"
+//     que devuelva "${value} páginas" si es number, o el string tal cual
+//     en mayúsculas si es string. Usá "typeof" para narrowear.
+// Tu código acá:
+
+
+// C4. Tipo literal. Definí "BookStatus" como union de los literales
+//     'available' | 'borrowed' | 'lost'. Escribí "nextStatus(status:
+//     BookStatus): BookStatus" que devuelva 'borrowed' si recibe
+//     'available', y 'available' en cualquier otro caso.
+// Tu código acá:
+
+
+// ============================================================
 // EJERCICIOS
 // ============================================================
 

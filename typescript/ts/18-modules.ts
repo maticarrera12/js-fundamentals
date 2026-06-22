@@ -128,6 +128,40 @@
 
 
 // ============================================================
+// CALENTAMIENTO — un mecanismo por vez
+// ============================================================
+// Micro-ejercicios. Cada uno aísla UN solo mecanismo del archivo.
+// Resolvelos en orden: cuando los tengas, los ejercicios de abajo
+// dejan de ser un salto al vacío.
+
+// C1. Módulo vs script. Sin crear archivos nuevos: respondé en un
+//     comentario, ¿este mismo archivo (18-modules.ts) es un módulo
+//     o un script? ¿Cómo lo sabés mirando la última línea del archivo?
+// Tu respuesta acá:
+
+
+// C2. import type inline. Escribí (sin ejecutar, esto es sintaxis)
+//     la línea de import que trae "createTask" como VALOR y "Task"
+//     como TIPO desde './models' en una sola línea, usando el
+//     modificador inline `type`.
+// Tu código acá (un comentario con la línea):
+
+
+// C3. Extensión en imports relativos. Con "moduleResolution": "nodenext",
+//     tenés un archivo "helpers.ts" en la misma carpeta y querés
+//     importar "formatDate" de ahí. Escribí la línea de import correcta.
+//     Pregunta: ¿por qué la extensión NO es ".ts"?
+// Tu código acá (un comentario con la línea + tu respuesta):
+
+
+// C4. Module augmentation mínimo. Escribí el bloque
+//     "declare module 'node:process' { ... }" que agregue UN solo
+//     campo nuevo a "NodeJS.ProcessEnv": "APP_NAME: string".
+//     (No hace falta verificarlo corriendo nada — es sintaxis.)
+// Tu código acá:
+
+
+// ============================================================
 // EJERCICIOS
 // ============================================================
 

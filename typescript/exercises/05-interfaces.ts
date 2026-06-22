@@ -1,4 +1,45 @@
 // ============================================================
+// CALENTAMIENTO — un mecanismo por vez
+// ============================================================
+// Micro-ejercicios. Cada uno aísla UN solo mecanismo del archivo.
+// Resolvelos en orden: cuando los tengas, los ejercicios de abajo
+// dejan de ser un salto al vacío.
+
+interface Book {
+    title: string
+    author: string
+    pages: number
+}
+
+// C1. Sintaxis base + modificadores. Escribí la interface "BookCopy"
+//     con las mismas keys que Book, pero agregale:
+//     - "notes" opcional (string)
+//     - "id" readonly (number)
+//     Esperado: { title: string; author: string; pages: number; notes?: string; readonly id: number }
+// Tu código acá:
+
+
+// C2. Métodos. Escribí la interface "BookPrinter" con un método
+//     "print(book: Book): void" (forma método) y una propiedad-función
+//     "log: (message: string) => void" (forma propiedad-función).
+// Tu código acá:
+
+
+// C3. extends. Escribí la interface "EBook" que herede de "Book"
+//     y agregue "fileSizeMb: number". Después escribí la interface
+//     "AudioBook" que herede de "Book" Y de una interface nueva
+//     "Narratable" con "narrator: string".
+// Tu código acá:
+
+
+// C4. Index signature. Escribí la interface "BookStock" donde las
+//     keys son el título del libro (string) y el valor es la
+//     cantidad disponible (number). Creá un objeto que la cumpla
+//     con al menos dos libros.
+// Tu código acá:
+
+
+// ============================================================
 // EJERCICIOS
 // ============================================================
 

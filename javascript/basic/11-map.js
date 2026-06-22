@@ -79,6 +79,21 @@ const mapFromObj = new Map(Object.entries({ host: 'localhost', port: 3000 }))
 
 
 // ============================================================
+// MÉTODOS MÁS USADOS (referencia rápida)
+// ============================================================
+//   set(k, v)     agrega o actualiza el par; devuelve el Map (encadenable)
+//   get(k)        valor de k, o undefined si no existe
+//   has(k)        true/false si la clave existe
+//   delete(k)     elimina el par; devuelve true si existía
+//   clear()       vacía el Map
+//   size          cantidad de pares (propiedad, NO método: sin paréntesis)
+//   keys()        iterador de claves
+//   values()      iterador de valores
+//   entries()     iterador de pares [k, v] (es el iterador por defecto del Map)
+//   forEach((v, k) => ...)  OJO al orden: primero el valor, después la clave
+
+
+// ============================================================
 // EJERCICIOS
 // ============================================================
 

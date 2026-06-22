@@ -119,6 +119,49 @@ type StringFields = OnlyStrings<Mixed>
 
 
 // ============================================================
+// CALENTAMIENTO — un mecanismo por vez
+// ============================================================
+// Micro-ejercicios. Cada uno aísla UN solo mecanismo del archivo.
+// Resolvelos en orden: cuando los tengas, los ejercicios de abajo
+// dejan de ser un salto al vacío.
+
+interface Account {
+    id: number
+    owner: string
+    balance: number
+}
+
+// C1. La sintaxis base. Escribí "Stringify<T>": un mapped type que
+//     copia las keys de T pero hace que TODOS los valores sean string.
+//     Esperado para Stringify<Account>:
+//       { id: string; owner: string; balance: string }
+//     (es el mismo molde que el ejemplo Nullable de arriba)
+// Tu código acá:
+
+
+// C2. Agregar un modificador. Escribí "Optional<T>" que haga opcional
+//     cada key. Es reimplementar Partial — agregás un solo caracter.
+//     Esperado para Optional<Account>:
+//       { id?: number; owner?: string; balance?: number }
+// Tu código acá:
+
+
+// C3. Quitar un modificador. Dado este tipo:
+type LockedAccount = Readonly<Account>
+//     Escribí "Unlock<T>" que QUITE el readonly de cada key.
+//     Tip: -readonly delante de la key.
+// Tu código acá:
+
+
+// C4. Renombrar keys. Escribí "Flagged<T>" que renombre cada key K
+//     a `is_${K}` y haga su valor boolean.
+//     Esperado para Flagged<Account>:
+//       { is_id: boolean; is_owner: boolean; is_balance: boolean }
+//     Tip: [K in keyof T as `is_${string & K}`]: boolean
+// Tu código acá:
+
+
+// ============================================================
 // EJERCICIOS
 // ============================================================
 
